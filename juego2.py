@@ -273,7 +273,6 @@ class world():
 class Enemy(pygame.sprite.Sprite):
     def __init__(self,x ,y):
         pygame.sprite.Sprite.__init__(self)
-        demon_fx.play()
         self.image = pygame.image.load('img/demon.png')
         self.rect = self.image.get_rect()
         self.rect.x = x
