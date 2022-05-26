@@ -17,8 +17,8 @@ from pygame.locals import *
 from pygame import mixer
 import pickle
 
-pygame.mixer.pre_init(44100,  -16, 2, 512)
-mixer.init()
+"""pygame.mixer.pre_init(44100,  -16, 2, 512)"""
+"""mixer.init()"""
 pygame.init()
 
 clock = pygame.time.Clock()
@@ -46,14 +46,14 @@ start_img = pygame.image.load('img/start_btn.png')
 exit_img = pygame.image.load('img/exit_btn.png')
 
 #load sounds
-pygame.mixer.music.load('img/sound.flac')
+"""pygame.mixer.music.load('img/sound.flac')
 pygame.mixer.music.play(-1, 0.0, 5000)
 lava_fx = pygame.mixer.Sound('img/lava.mp3')
 lava_fx.set_volume(0.2)
 jump_fx = pygame.mixer.Sound('img/jump.wav')
 jump_fx.set_volume(0.2)
 game_over_fx = pygame.mixer.Sound('img/game_over.mp3')
-game_over_fx.set_volume(0.3)
+game_over_fx.set_volume(0.3)"""
 
 class Button():
     def __init__(self, x, y, image):
@@ -99,7 +99,7 @@ class player():
             #get keypresses
             key = pygame.key.get_pressed()
             if key[pygame.K_SPACE] and self.jumped == False and self.in_air == False:
-                jump_fx.play()
+                """jump_fx.play()"""
                 self.vel_y = - 15
                 self.jumped = True
             if key[pygame.K_SPACE] == False:
@@ -157,11 +157,11 @@ class player():
             #check for  collision with  enemies
             if pygame.sprite.spritecollide(self, demon_group, False):
                 game_over = -1
-                game_over_fx.play()
+               """game_over_fx.play()"""
             #check for  collision with  lava
             if pygame.sprite.spritecollide(self, lava_group, False):
                 game_over = -1
-                game_over_fx.play()
+                """game_over_fx.play()"""
                 print(game_over)
 
 
